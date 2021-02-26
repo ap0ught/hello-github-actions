@@ -1,5 +1,6 @@
 FROM docker/whalesay:latest
 MAINTAINER Misa Ogura misa.ogura01@gmail.com
 
-ENTRYPOINT ["cowsay"]
-CMD ["SHIP IT!!!"]
+ADD entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]
